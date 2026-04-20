@@ -5,7 +5,7 @@
 }
 
 :root {
-    --navBar-color: #131313c6;
+    --navBar-color: #131313;
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
     --golden-btn-text-color: #432f01;
@@ -32,6 +32,7 @@ body {
 
 
 .nav-bar {
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
