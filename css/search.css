@@ -1,5 +1,5 @@
 :root {
-    --navBar-color: #131313c6;
+    --navBar-color: #131313;
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
     --golden-btn-text-color: #432f01;
@@ -15,7 +15,7 @@ main {
     color: var(--text-color);
     font-size: 40px;
     margin-left: 16%;
-    margin-bottom: 12px;
+    margin-top: 12px;
 }
 
 .search-window {
@@ -42,58 +42,89 @@ main {
     width: 8%;
     background-color: var(--golden-color);
     cursor: pointer;
+    border: none;
 }
-.search-window button:hover{
+
+.search-window button:hover {
     background-color: var(--golden-hover-color);
 }
 
-.search-filters {
+.categories {
     display: flex;
-    justify-content: space-between ;
     margin: 0 16%;
     margin-top: 15px;
+    justify-content: space-between;
 }
 
-.filter-era,
-.filter-region,
-.filter-musuem{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 20%;
-}
-label{
-    color: var(--golden-color);
-}
-select{
-    background-color: #353534 ;
-    color: white;
-    height: 38px;
-}
-select option:hover{
-    background-color:var(--golden-hover-color) !important ;
-}
-
-.filter-method{
-    display: flex;
-    height: 38px;
-    width: 20%;
-    background-color:  #353534;
-    align-self: flex-end;
-    border: 1px solid rgb(123, 123, 123);
-    align-items: center;
-}
-
-.filter-method button{
+.categories button {
+    padding: 8px 16px;
+    border-radius: 3em;
+    border: 2px solid var(--golden-color);
     background-color: transparent;
-    border: transparent;
-    height: 37px;
-    width: 50%;
+    color: var(--small-text-color);
     cursor: pointer;
-    color: white;
 }
 
-.active-method{
+.active-category {
     background-color: var(--golden-color) !important;
     color: var(--golden-btn-text-color) !important;
+}
+.hide{
+    display: none;
+}
+#artifacts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 0;
+    margin: 0 16%;
+    gap: 50px 0;
+}
+
+.card {
+    background-color: #353534;
+    max-width: 18em;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.imgage-container {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 15em;
+}
+
+.artifact-header{
+    margin-top: 10px;
+    color: var(--golden-color);
+    font-size: 12px;
+}
+
+.artifact-name{
+    color: var(--text-color);
+    margin-top: 5px;
+}
+.artifacte-subtitle{
+    color: var(--small-text-color);
+    margin-top: 10px;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+}
+.heart-icon{
+    margin-left:10px ;
+}
+.active-heart{
+    color: red;
+}
+.heart-icon,.archive-icon{
+    color: var(--golden-color);
+    cursor: pointer;
 }

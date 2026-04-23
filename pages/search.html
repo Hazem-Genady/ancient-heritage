@@ -34,58 +34,22 @@
         </div>
     </nav>
     <main>
-        <h1 class="search-header">Search Results</h1>
         <div class="search-window">
-            <input type="text">
-            <button type="submit">Excute Search</button>
+            <input type="search" id="search-input" placeholder="Search Artifact Name Here...">
+            <button id="search">Excute Search</button>
         </div>
-        <div class="search-filters">
-            <div class="filter-era">
-                <label for="era">Era</label>
-                <select name="era" id="era">
-                    <option value="all-eras">All Eras</option>
-                    <option value="Pharaonic">Pharaonic</option>
-                    <option value="romanian">Romanian</option>
-                    <option value="greek">Greek</option>
-                    <option value="coptic">Copic</option>
-                    <option value="islamic">Islamic</option>
-                    <option value="modern">Modern</option>
-                </select>
-            </div>
-            <div class="filter-region">
-                <label for="region">Geographic Region</label>
-                <select name="region" id="region">
-                    <option value="all-regions">All Regions</option>
-                    <option value="south">Southern Egypt</option>
-                    <option value="north">Northern Egypt</option>
-                    <option value="middle">middle Egypt</option>
-                </select>
-            </div>
-            <div class="filter-musuem">
-                <label for="museum">Museum</label>
-                <select name="museum" id="museum">
-                    <option value="all-museums">All Museums</option>
-                    <option value="gem">The Grand Egyptian Museum</option>
-                    <option value="egyptian-museum">The Egyptian Museum</option>
-                    <option value="nmec">NMEC</option>
-                    <option value="coptic">The Coptic Museum</option>
-                    <option value="islamic">The Museum of Islamic Art</option>
-                </select>
-            </div>
-            <div class="filter-method">
-                <button class="grid active-method"><i class="fa-solid fa-table-cells"></i> Grid</button>
-                <button class="list"><i class="fa-solid fa-list"></i> List</button>
-            </div>
+        <div class="categories">
+            <button class="button-value" onclick="filterArtifacts('All Museums')">All Museums</button>
+            <button class="button-value" onclick="filterArtifacts('Grand Egyptian Museum')" >Grand Egyptian Museum</button>
+            <button class="button-value"onclick="filterArtifacts('Egyptian Museum')">Egyptian Museum</button>
+            <button class="button-value"onclick="filterArtifacts('NMEC')">NMEC</button>
+            <button class="button-value" onclick="filterArtifacts('Coptic Musuem')">Coptic Musuem</button>
+            <button class="button-value" onclick="filterArtifacts('Islamic Art Museum')">Islamic Art Museum</button>
+            <button class="button-value" onclick="filterArtifacts('Other')">Other</button>
         </div>
-        <div class="cards-container">
-            <div class="card">
-                <img src="" alt="" class="artifact-image">
-                <p class="artifact-subtitle"></p>
-                <h1 class="artifact-header"></h1>
-                <p class="artifact-info"></p>
-                <!-- <span><i class="fa-solid fa-heart"></i></span>
-                <span><i class="fa-solid fa-box-archive"></i></span> -->
-            </div>
+        <h1 class="search-header">Search Results:</h1>
+        <div id="artifacts-container">
+
         </div>
     </main>
     <footer class="footer">
