@@ -4,13 +4,8 @@
     box-sizing: border-box
 }
 
-::selection {
-    background-color: #c59f59c5;
-    color: #4e3700;
-}
-
 :root {
-    --navBar-color: #131313;
+    --navBar-color:rgba(19, 19, 19, 0.8);
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
     --golden-btn-text-color: #432f01;
@@ -37,8 +32,9 @@ body {
 
 
 .nav-bar {
-    position: sticky;
+    position: absolute;
     top: 0;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,16 +43,15 @@ body {
     font-family: mainFont;
     font-size: 25px;
     width: 100%;
-    height: 100px;
+    height: 75px;
     padding: 0 40px;
-    opacity: 0.9;
     letter-spacing: 5px;
-    z-index: 100;
 }
 
 .nav-cnt {
     display: flex;
     gap: 50px;
+    margin-right: 50px;
 }
 
 .nav-links {
@@ -85,24 +80,28 @@ body {
 
 .sign {
     display: flex;
+
 }
 
 .nav-bar .sign-btn {
     position: relative;
-    padding: 8px 16px;
+    padding: 5px 16px;
     background-color: var(--golden-color);
     border-radius: 12px;
     color: var(--golden-btn-text-color);
-    font-size: 25px;
+    font-size: 20px;
     text-decoration: none;
     letter-spacing: normal;
     transition: 0.4s;
 }
-
+.icon{
+    display: none;
+}
 .nav-bar .sign-btn:hover {
     background-color: var(--golden-hover-color);
     color: var(--golden-btn-text-color);
 }
+
 
 .nav-bar .sign a.sign-btn.active {
     background-color: var(--golden-hover-color);
@@ -114,7 +113,7 @@ main {
 
 .footer {
     display: flex;
-    height: 90px;
+    height: 50px;
     align-items: center;
     justify-content: space-between;
     font-family: mainFont;
@@ -131,14 +130,15 @@ main {
 }
 
 .footer p {
-    font-size: 12px;
+    font-size: 10px;
+    color: var(--text-color);
 }
 
 .footer-links {
     display: flex;
-    gap: 50px;
+    gap: 30px;
     align-items: center;
-    padding-right: 250px;
+    justify-content: flex-end;
 }
 
 .footer-links a {
