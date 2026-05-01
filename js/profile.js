@@ -1,23 +1,16 @@
 let storeData = localStorage.getItem("user")
 let userData = JSON.parse(storeData);
 
-if (userData.Name == undefined) {
-    document.getElementById("userName").innerText = "Welcome Back!";
-    document.getElementById("userEmail").innerText = userData.Email;
-} else {
+if (userData.Name ) {
     document.getElementById("userName").innerText = "Hello " + userData.Name;
     document.getElementById("userEmail").innerText = userData.Email;
 }
 
-
-if (userData.Name == "") {
-    document.getElementById("userName").innerText = "Welcome Back";
-}
-function removeFromLocal(key, id) {
-    let savedItems = JSON.parse(localStorage.getItem(key)) || [];
-    let updatedItems = savedItems.filter(el => el.id !== id);
-    localStorage.setItem(key, JSON.stringify(updatedItems));
-}
+// function removeFromLocal(key, id) {
+//     let savedItems = JSON.parse(localStorage.getItem(key)) || [];
+//     let updatedItems = savedItems.filter(el => el.id !== id);
+//     localStorage.setItem(key, JSON.stringify(updatedItems));
+// }
 
 document.querySelector(".btn").onclick = ()=>{
     let box = document.createElement("div");
@@ -56,7 +49,9 @@ document.querySelector(".btn").onclick = ()=>{
 
     
     document.querySelector(".no").onclick = ()=>{document.querySelector("#pop").removeChild(box);};
-    document.querySelector(".yes").onclick = ()=>{localStorage.clear(user);window.location.href = "../index.html"; };
+    document.querySelector(".yes").onclick = ()=>{/*localStorage.clear(user);*/
+        window.location.href = "../index.html";
+ };
     
 }
 
