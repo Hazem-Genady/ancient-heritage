@@ -24,7 +24,7 @@ if(localStorage.getItem("favorite") === null){
     document.getElementById("art").innerText = "add something you like!";
 }
 
-for (let j of artifactData) {
+for (let j of artifactData || []) {
     let card = document.createElement("div");
     let pic = document.createElement("img");
     let picDiv = document.createElement("div");
@@ -95,6 +95,9 @@ function homeMod(){
         x.style.transition = "1ms ease-in-out"
         x.style.border = "2px solid var(--big-text-light)";
     }
+    else{
+        x.src = "../assets/Logos/Gemini_Generated_Image_fbvl9mfbvl9mfbvl.png";
+    }
     document.querySelector(".log").classList.toggle("light");
     document.querySelector(".btn").classList.toggle("light");
     document.querySelector(".art").classList.toggle("light");
@@ -161,6 +164,15 @@ function pop (){
 
     
     document.querySelector(".no"||".no.light").onclick = ()=>{document.querySelector("#pop").removeChild(box);};
-    document.querySelector(".yes"||".yes.light").onclick = ()=>{localStorage.removeItem("user");window.location.href = "../index.html"; };
+    document.querySelector(".yes"||".yes.light").onclick = ()=>{
+        let Button = document.getElementById("sign-btn");
+        let Icon = document.getElementById("icon");
+        Icon.style.display = "none";
+        Button.style.display = "block";
+        localStorage.removeItem("favorite");
+        window.location.href = "../index.html"; 
+        let log = {userData,flagValue:"signedOut"};
+        localStorage.setItem('user', JSON.stringify(log));
+        };
     
 }
