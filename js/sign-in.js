@@ -1,4 +1,4 @@
- let storeData = localStorage.getItem("user")
+let storeData = localStorage.getItem("user")
  let userData = JSON.parse(storeData);
 
  function email (event){
@@ -8,13 +8,13 @@
    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //بيتاكد ان الايميل مكتوب صح ان يكون جواه @ . حروف انجلش والامتداد
 
        if (emailV.trim() == ""){
-       error1.innerText = "✖ Email is required";
+       error1.innerText = "✖️ Email is required";
        error1.style.color ="rgb(182, 28, 28)" ;
        input[0].classList.add("E");
        return false ;
     }
     else if(!emailRegex.test(emailV)){
-       error1.innerText = "✖ Not valid email address";
+       error1.innerText = "✖️ Not valid email address";
        error1.style.color ="rgb(182, 28, 28)" ;
        input[0].classList.add("E");
        return false ;
@@ -28,16 +28,16 @@
     let passwordV =  document.forms["signIn"]["Password"].value;
     let error2 = document.getElementsByClassName("error")[1];
     let input = document.getElementsByTagName("input");
-    let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; //بيقبل حروف وارقام 
+    let passwordRegex = /^(?=.[A-Za-z])(?=.\d)[A-Za-z\d]{8,}$/; //بيقبل حروف وارقام 
 
     if (passwordV.trim() == "" ){
-       error2.innerText = "✖ Password is required";
+       error2.innerText = "✖️ Password is required";
        error2.style.color = "rgb(182, 28, 28)" ;
         input[1].classList.add("E");
       return false ;
     }
     else if (!passwordRegex.test(passwordV)){
-       error2.innerText = "✖ Password must be 8+ chars with letters and numbers.";
+       error2.innerText = "✖️ Password must be 8+ chars with letters and numbers.";
        error2.style.color = "rgb(182, 28, 28)" ;
         input[1].classList.add("E");
        return false ;
@@ -122,6 +122,4 @@ let savedIn = localStorage.getItem("InMod");
 let savedMod = localStorage.getItem("theme");
 if (savedIn !== savedMod) {
     inMod();
-}  
-
-
+}

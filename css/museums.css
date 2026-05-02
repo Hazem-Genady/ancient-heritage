@@ -28,27 +28,33 @@ body {
 }
 
 :root {
+    --black: #000;
     --navBar-color-dark: #131313e6;
-    --navBar-color-light: #fef8efe6;
+    --navBar-color-light: #f2ede4cc;
     --background-dark: #0a0a0a;
-    --background-light: #f8f2ea;
+    --background-light: #f2ede4;
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
     --golden-btn-text-color: #432f01;
     --text-dark: #a4a2a8;
-    --text-light: #4e4635;
     --active-text: rgb(152, 120, 34);
+    --text-light: #6B4F3A;
+    --big-text-light: #3E2F23;
     --active-text: #987822;
-    --big-text-light: #2b240a;
     --small-text-dark: #b5aa9b;
-    --footer-light: #e8d9ac;
-    --table_card_background: #353534;
-    --button-light: #765700;
-    --table-border: #ffd572;
-    --shadow--: 0 15px 35px rgba(0, 0, 0, 0.5);
+    --card-background-color: #353534;
     --container-color-light: #fdedbf;
     --container-second-light: #383010;
+    --button-light: #937C63;
+    --button-hover-light: #7D6852;
+    --footer-light: #f2ede4;
+    --container-color-light: #F9F3E5;
+    --container-second-light: #383010;
+    --table-border: #ffd572;
+    --table_card_background: #353534;
+    --shadow--: 0 15px 35px #00000080;
 }
+
 
 .heading {
     display: flex;

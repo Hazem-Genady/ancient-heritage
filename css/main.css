@@ -275,6 +275,11 @@ body.light {
     color: var(--golden-btn-text-color);
 }
 
+.nav-bar .sign-btn.light:hover {
+    background-color: var(--button-hover-light);
+    color: white;
+}
+
 main {
     flex: 1;
 }
