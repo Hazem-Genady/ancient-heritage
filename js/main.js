@@ -1,15 +1,12 @@
-let storeData = localStorage.getItem("user")
-let userData = JSON.parse(storeData);
-let log = JSON.parse(localStorage.getItem("log"));
+let log = localStorage.getItem("log");
 let Button = document.getElementById("sign-btn");
 let Icon = document.getElementById("icon");
-if(!user && !log){
-    Icon.style.display = "none";
-    Button.style.display = "block";
-} 
-else if(log){
+if (log === "loged") {
     Icon.style.display = "block";
     Button.style.display = "none";
+} else {
+    Icon.style.display = "none";
+    Button.style.display = "block";
 }
 // if (!log) {
 //     Icon.style.display = "none";
