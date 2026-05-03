@@ -8,17 +8,17 @@
     --active-text: #987822;
     --small-text-dark: #b5aa9b;
 
-    --navBar-color-light: rgb(242, 237, 228 , 0.8);
-    --background-light: #f2ede4; 
-    --button-light:#937C63; 
-    --button-hover-light:#7D6852;  
-    --footer-light: #f2ede4; 
+    --navBar-color-light: rgb(242, 237, 228, 0.8);
+    --background-light: #f2ede4;
+    --button-light: #937C63;
+    --button-hover-light: #7D6852;
+    --footer-light: #f2ede4;
 
     --container-color-light: #F9F3E5;
     --container-second-light: #383010;
-    
-  --text-light: #5d3c24;      
-  --big-text-light: #3E2F23; 
+
+    --text-light: #5d3c24;
+    --big-text-light: #3E2F23;
 }
 
 
@@ -167,23 +167,28 @@ h1.light {
     letter-spacing: 2px;
     padding: 3px;
 }
-.form-link .sign.light{
-   color: var(--text-light);
+
+.form-link .sign.light {
+    color: var(--text-light);
 }
+
 .form-link .sign:hover {
     color: var(--golden-color);
 }
+
 .form-link .sign.light:hover {
-    color:var(--big-text-light);
+    color: var(--big-text-light);
 }
+
 .form-link .active {
     border-bottom: 2px solid var(--golden-color);
     color: var(--golden-color);
 }
-.form-link .active.light{
+
+.form-link .active.light {
     border-bottom: 2px solid var(--big-text-light);
-   color: var(--big-text-light);
-  
+    color: var(--big-text-light);
+
 }
 
 form div {
@@ -193,16 +198,17 @@ form div {
 
 }
 
-div label{
-    font-size:16px ;
+div label {
+    font-size: 16px;
     font-family: mainFont;
     font-weight: normal;
     color: var(--small-text-dark);
     letter-spacing: 2px;
     padding: 5px 0;
 }
-div label.light{
-   color: var(--text-light);
+
+div label.light {
+    color: var(--text-light);
 }
 
 div input {
@@ -216,9 +222,10 @@ div input {
     transition: 0.2s;
     width: 100%;
 }
-div input.light{
-   background-color: var(--background-light);
-   color: var(--text-light);
+
+div input.light {
+    background-color: var(--background-light);
+    color: var(--text-light);
 }
 
 .error {
@@ -228,7 +235,8 @@ div input.light{
     font-family: mainFont;
     font-weight: normal;
 }
-.errorS{
+
+.errorS {
     height: 18px;
     text-align: left;
     font-size: 20px;
@@ -236,8 +244,9 @@ div input.light{
     font-weight: normal;
     margin-bottom: 10px;
 }
-div input:focus{
-    border:0.5px solid var(--golden-color);
+
+div input:focus {
+    border: 0.5px solid var(--golden-color);
 }
 
 div input.light:focus {
@@ -273,16 +282,18 @@ button.light:hover {
     background-color: var(--button-hover-light);
     color: white;
 }
-.sign-in P{
-    color:var(--text-dark);
+
+.sign-in P {
+    color: var(--text-dark);
     font-size: 14px;
     font-family: mainFont;
     text-align: center;
     letter-spacing: 1px;
     line-height: 1.4;
 }
-.sign-in P.light{
-   color: var(--button-light);
+
+.sign-in P.light {
+    color: var(--button-light);
 }
 
 .sign-in .Q {
@@ -291,11 +302,13 @@ button.light:hover {
     font-family: mainFont;
     margin-bottom: 10px;
 }
-.Q a{
+
+.Q a {
     color: var(--golden-color);
     text-decoration: none;
 }
-.Q a.light{
+
+.Q a.light {
     color: var(--big-text-light);
 }
 
@@ -307,23 +320,26 @@ button.light:hover {
     margin: 15px 0;
     color: var(--small-text-dark);
 }
-.or.light{
+
+.or.light {
     color: var(--text-light);
 }
 
 .or::after,
-.or::before{
+.or::before {
     content: '';
     flex: 1;
     border-bottom: 1px solid var(--small-text-dark);
     margin-right: 15px;
     margin-left: 15px;
 }
-.or.light::after, 
-.or.light::before{
-   border-bottom: 1px solid var(--text-light);
-} 
-.diff-way{
+
+.or.light::after,
+.or.light::before {
+    border-bottom: 1px solid var(--text-light);
+}
+
+.diff-way {
     display: flex;
     flex-direction: row;
     justify-content: center;

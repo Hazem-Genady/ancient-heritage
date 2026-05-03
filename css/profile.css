@@ -18,84 +18,101 @@
     --text-light: #6B4F3A;
     --big-text-light: #3E2F23;
 }
+
 @font-face {
     font-family: mainFont;
     src: url(../assets/Fonts/noto-serif.regular.ttf);
 }
-body{
+
+body {
     text-transform: capitalize;
     font-family: mainFont;
     display: flex;
 }
-.head,main{
+
+.head, main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1%;
 }
-.mode-cnt{
+
+.mode-cnt {
     left: 120px;
 }
-#profilePic{
+
+#profilePic {
     width: 150px;
     height: 150px;
     border-radius: 20px;
     margin: 1%;
     border: 2px solid var(--golden-color);
 }
-h1{
+
+h1 {
     color: var(--golden-color);
     font-weight: unset;
 }
-h4,h3{
+
+h4, h3 {
     color: var(--small-text-dark);
     font-weight: unset;
 }
-h3{
+
+h3 {
     border-bottom: 2px solid var(--small-text-dark);
     padding: 2%;
 }
-.fav{
+
+.fav {
     width: 50%;
     margin: 4%;
 }
-hr{
+
+hr {
     background-color: var(--golden-color);
     width: 5%;
     margin: 3%;
     font-weight: unset;
 }
-.btn{
+
+.btn {
     width: 100px;
     height: 30px;
     color: var(--golden-color);
     text-align: center;
     align-items: center;
-    transition: 0.15s ;
+    transition: 0.15s;
     margin: 1px;
     cursor: pointer;
 }
-.btn:hover{
-    transform: scale(1.1)!important;
+
+.btn:hover {
+    transform: scale(1.1) !important;
     text-shadow: 2px 3px 8px black;
 }
-.btn.light:hover{
-    text-shadow: 0px 0px 4px var(--navBar-colo-dark-dark)!important;
+
+.btn.light:hover {
+    text-shadow: 0px 0px 4px var(--navBar-colo-dark-dark) !important;
 }
-a{
+
+a {
     text-decoration: none;
     color: var(--black);
     font-size: 130%;
 }
-.fav{
+
+.fav {
     justify-self: center;
-    img{
+
+    img {
         height: 100%;
         width: 100%;
         border-radius: 20px;
     }
-    h2{
+
+    h2 {
         color: var(--golden-color);
         font-weight: unset;
         font-size: 80%;
@@ -103,20 +120,23 @@ a{
         line-height: 1.2;
         word-wrap: break-word;
     }
-    h5{
+
+    h5 {
         color: var(--small-text-dark);
         font-weight: unset;
         font-size: 75%;
         width: 20px;
     }
-    h6{
+
+    h6 {
         color: var(--small-text-dark);
         font-weight: unset;
         font-size: 65%;
         width: auto;
         white-space: nowrap;
     }
-    .container{
+
+    .container {
         margin: 2%;
         display: flex;
         justify-self: center;
@@ -125,16 +145,19 @@ a{
         align-items: center;
         gap: 25px;
     }
-    .picture{
+
+    .picture {
         height: 130px;
         width: 130px;
     }
-    .nameInfo{
+
+    .nameInfo {
         flex: 1;
         min-width: 150px;
         text-wrap: wrap;
     }
-    .iconBox{
+
+    .iconBox {
         display: flex;
         align-items: center;
         font-size: 150%;
@@ -142,25 +165,29 @@ a{
         gap: 15px;
         justify-content: flex-end;
     }
-    .text{
+
+    .text {
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: space-between;
         gap: 20px;
     }
-    .cardFooter{
-        display: flex; 
+
+    .cardFooter {
+        display: flex;
         align-items: center;
         width: 100%;
         gap: 15px;
         justify-content: space-between;
     }
-    i{
+
+    i {
         cursor: pointer;
     }
 }
-.box{
+
+.box {
     background-color: black;
     position: fixed;
     z-index: 999;
@@ -178,24 +205,29 @@ a{
     box-shadow: 0px 0px 15px var(--golden-color);
     font-weight: unset;
 }
-.icony{
+
+.icony {
     color: var(--golden-color);
     font-size: 160%;
 }
-.hr{
+
+.hr {
     width: 310px;
     height: 2px;
     margin: 2.5%;
     background-color: var(--golden-color);
     border-radius: 5px;
 }
-.heading{
+
+.heading {
     color: var(--golden-color);
 }
-.warning{
+
+.warning {
     color: var(--text-color);
 }
-.no{
+
+.no {
     border: 1px solid var(--golden-color);
     cursor: pointer;
     text-align: center;
@@ -205,7 +237,8 @@ a{
     align-items: center;
     width: 20%;
 }
-.yes{
+
+.yes {
     color: var(--black);
     background-color: var(--golden-color);
     cursor: pointer;
@@ -216,80 +249,100 @@ a{
     height: 90%;
     border-radius: 8px;
 }
-.choice{
+
+.choice {
     display: flex;
     justify-content: center;
     width: 100%;
     gap: 10%;
 }
-.sign{
+
+.sign {
     display: none;
 }
 
-.userName.light{
+.userName.light {
     color: var(--big-text-light);
 }
-.userEmail.light{
+
+.userEmail.light {
     color: var(--button-light);
 }
-.art.light{
+
+.art.light {
     color: var(--container-second-light);
 }
-.nameInfo.light{
-    h5{
+
+.nameInfo.light {
+    h5 {
         color: var(--container-second-light);
     }
-    h2{
+
+    h2 {
         color: var(--button-light);
         /* text-shadow: 0px 0px 5px var(--container-second-light); */
     }
 }
-.cardFooter.light{
-    h6{
+
+.cardFooter.light {
+    h6 {
         color: var(--container-second-light);
     }
 }
-.iconBox.light{
+
+.iconBox.light {
     color: rgb(232, 115, 115);
 }
-.arrow.light{
+
+.arrow.light {
     color: var(--text-light);
 }
-.log.light{
+
+.log.light {
     color: var(--small-text-dark);
 }
-.footer.light{
+
+.footer.light {
     background-color: white;
 }
-hr.light{
-    color: var(--big-text-light)!important;
+
+hr.light {
+    color: var(--big-text-light) !important;
 }
-#pop.light{
-    .box{
+
+#pop.light {
+    .box {
         background-color: white !important;
         box-shadow: 0px 0px 15px var(--big-text-light);
-        .icony{
+
+        .icony {
             color: var(--big-text-light);
-            }
-        .hr{
-                background-color: var(--big-text-light);
-            }
-        .heading{
-                color: var(--big-text-light);
-            }
-        .warning{
-                color: var(--button-hover-light);
-            }
-        .no{
+        }
+
+        .hr {
+            background-color: var(--big-text-light);
+        }
+
+        .heading {
+            color: var(--big-text-light);
+        }
+
+        .warning {
+            color: var(--button-hover-light);
+        }
+
+        .no {
             border: 1px solid var(--big-text-light);
             color: var(--big-text-light);
-            }
-        .yes{
-                background-color: var(--big-text-light);
-                color: white;
-            }
+        }
+
+        .yes {
+            background-color: var(--big-text-light);
+            color: white;
+        }
     }
 }
+
 /* @media (max-width = 567px) {
     .head,main{
         padding: 0.5%;

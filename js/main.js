@@ -47,12 +47,12 @@ function changeMod() {
         localStorage.setItem("theme", "dark");
     }
 }
+let saved = localStorage.getItem("theme");
+if (saved === "light") {
+    changeMod();
+}
 if (document.querySelector(".span1").classList.contains("light")) {
     localStorage.setItem("theme", "light");
 } else {
     localStorage.setItem("theme", "dark");
-}
-let saved = localStorage.getItem("theme");
-if (saved === "light") {
-    changeMod();
 }

@@ -296,11 +296,11 @@ img {
 }
 
 .active-icon {
-    color: black ;
+    color: black;
 }
 
-.card.light .active-icon{
-    color:  rgb(232, 115, 115) !important;
+.card.light .active-icon {
+    color: rgb(232, 115, 115) !important;
 }
 
 #artifacts-container.list {

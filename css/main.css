@@ -184,7 +184,7 @@ body.light {
     height: 75px;
     padding: 0 40px;
     letter-spacing: 5px;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .nav-bar.light {
@@ -295,7 +295,7 @@ main {
     color: var(--golden-color);
     padding: 0 40px;
     letter-spacing: 2px;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .footer.light {

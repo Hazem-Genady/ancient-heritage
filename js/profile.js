@@ -114,18 +114,6 @@ function homeMod() {
     });
 }
 
-if (main.classList.contains("light")) {
-    let currenS = localStorage.setItem("homeMod", "light");
-}
-else {
-    let currentS = localStorage.setItem("homeMod", "dark");
-}
-let savedS = localStorage.getItem("homeMod");
-let savedMod = localStorage.getItem("theme");
-if (savedS !== savedMod) {
-    homeMod();
-}
-
 
 function pop() {
     let box = document.createElement("div");
@@ -161,8 +149,6 @@ function pop() {
     no.innerText = "cancel";
 
 
-
-
     document.querySelector(".no" || ".no.light").onclick = () => { document.querySelector("#pop").removeChild(box); };
     document.querySelector(".yes" || ".yes.light").onclick = () => {
         let Button = document.getElementById("sign-btn");
@@ -174,4 +160,16 @@ function pop() {
         localStorage.removeItem("log");
     };
 
+}
+
+if (main.classList.contains("light")) {
+    let currenS = localStorage.setItem("homeMod", "light");
+}
+else {
+    let currentS = localStorage.setItem("homeMod", "dark");
+}
+let savedS = localStorage.getItem("homeMod");
+let savedMod = localStorage.getItem("theme");
+if (savedS !== savedMod) {
+    homeMod();
 }

@@ -1,5 +1,5 @@
 :root {
-    --black : #000;
+    --black: #000;
     --navBar-color-dark: #131313e6;
     --navBar-color-light: #fef8efe6;
     --background-dark: #0a0a0a;
@@ -15,114 +15,134 @@
     --small-text-dark: #b5aa9b;
     --footer-light: #f2ede4;
     --button-light: #937C63;
-    --card-background-color:#353534;
+    --card-background-color: #353534;
     --container-color-light: #fdedbf;
     --container-second-light: #383010;
 }
 
-.a{
+.a {
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-image:linear-gradient(rgba(0,0,0,0.5)),
-    url(../assets/images/download.jpeg);  
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5)),
+        url(../assets/images/download.jpeg);
     background-size: cover;
     background-position: center;
-    min-height: 100vh; 
-    padding-top:75px ;
+    min-height: 100vh;
+    padding-top: 75px;
     gap: 100px;
 }
-.a.light{
-    background-image: linear-gradient(rgb(255, 255, 255 ,.5)),
-    url(../assets/images/feedback\ light.jpeg);
+
+.a.light {
+    background-image: linear-gradient(rgb(255, 255, 255, .5)),
+        url(../assets/images/feedback\ light.jpeg);
 }
-.miniTitle{
+
+.miniTitle {
     color: var(--golden-color);
     font-size: 14px;
     font-family: mainFont;
     letter-spacing: 2px;
     margin-bottom: -10px;
 }
-.miniTitle.light{
+
+.miniTitle.light {
     color: var(--text-light);
 }
-h1 span{
+
+h1 span {
     color: white;
 }
-h1 span.light{
+
+h1 span.light {
     color: white;
     text-shadow: 1px 1px 8px var(--big-text-light);
 }
-h1{
+
+h1 {
     color: var(--golden-color);
     font-size: 70px;
-    font-family: mainFont ;
+    font-family: mainFont;
     font-weight: 500;
     padding: 20px 0;
 }
-h1.light{
+
+h1.light {
     color: var(--big-text-light);
     text-shadow: 1px 1px 2px var(--big-text-light);
 }
-.line{
+
+.line {
     width: 20%;
-    border-top:5px solid var(--golden-color) ;
+    border-top: 5px solid var(--golden-color);
 }
-.line.light{
+
+.line.light {
     border-top: 5px solid var(--big-text-light);
 }
-.description{
+
+.description {
     color: var(--small-text-dark);
     font-size: 22px;
-    font-family: mainFont ;
-    padding:20px 0;
+    font-family: mainFont;
+    padding: 20px 0;
     line-height: 1.4;
-   max-width: 600px;
+    max-width: 600px;
 }
-.description.light{
+
+.description.light {
     color: var(--text-light);
 }
-.end{
+
+.end {
     display: flex;
     flex-direction: row;
     gap: 50px;
     margin-top: 30px;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.head-contact{
+
+.head-contact {
     color: #e7bf7593;
     font-size: 20px;
     margin-bottom: 5px;
-    text-transform:uppercase;
+    text-transform: uppercase;
     letter-spacing: 1px;
 }
-.head-contact.light{
+
+.head-contact.light {
     color: var(--text-light);
 }
-.main-contact{
+
+.main-contact {
     color: #b5aa9b;
     font-size: 18px;
     margin-bottom: 30px;
 }
-.main-contact.light{
+
+.main-contact.light {
     color: white;
     text-shadow: 1px 1px 8px var(--big-text-light);
 }
-li{
+
+li {
     list-style-type: none;
     border-left: 3px solid rgba(255, 255, 255, 0.15);
     padding-left: 20px;
     margin-bottom: 15px;
 }
-li.light{
+
+li.light {
     border-left: 3px solid var(--big-text-light);
 }
-.left{
-    margin:50px 0;
+
+.left {
+    margin: 50px 0;
     display: flex;
     justify-content: center;
     background-color: var(--navBar-color-dark);
@@ -133,87 +153,101 @@ li.light{
     transition: 0.4s;
 }
 
-.left.light{
+.left.light {
     background-color: var(--navBar-color-light);
 }
 
-.feed-back{
+.feed-back {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+
 form div {
     display: flex;
     flex-direction: column;
     color: var(--small-text-dark);
     gap: 2px;
 }
-div label{
-    font-size:16px ;
+
+div label {
+    font-size: 16px;
     font-family: mainFont;
     font-weight: normal;
     color: var(--small-text-dark);
     letter-spacing: 2px;
     padding: 5px 0;
 }
-div label.light{
+
+div label.light {
     color: var(--text-light);
 }
-div input ,
-div textarea{
+
+div input,
+div textarea {
     font-size: 16px;
     font-family: mainFont;
     color: var(--text-dark);
-    padding:5px 10px;
+    padding: 5px 10px;
     background-color: rgba(46, 45, 45, 0.4);
     outline: none;
-    border:0.5px solid rgba(46, 45, 45, 0.4);
+    border: 0.5px solid rgba(46, 45, 45, 0.4);
     transition: 0.2s;
     width: 100%;
 }
-div input.light ,
-div select.light ,
-div textarea.light{
+
+div input.light,
+div select.light,
+div textarea.light {
     background-color: var(--background-light);
-    color:#674f3e;
+    color: #674f3e;
 }
-.type{
+
+.type {
     font-size: 16px;
     font-family: mainFont;
     color: var(--text-dark);
-    padding:5px 10px;
+    padding: 5px 10px;
     background-color: rgba(46, 45, 45, 0.4);
     outline: none;
-    border:0.5px solid rgba(46, 45, 45, 0.4);
+    border: 0.5px solid rgba(46, 45, 45, 0.4);
     transition: 0.2s;
     width: 100%;
     margin-bottom: 15px;
 }
-div option{
+
+div option {
     background-color: black;
 }
-div option.light{
+
+div option.light {
     background-color: var(--navBar-color-light);
 }
-div option:focus{
+
+div option:focus {
     background-color: aliceblue;
 }
-div textarea{
+
+div textarea {
     height: 100px;
     resize: none;
 }
+
 div input.E,
-div textarea.E{
-   border:  1px solid rgb(182, 28, 28);
- }
-div input.T{
-   border:  1px solid rgb(24, 80, 24);
- }
+div textarea.E {
+    border: 1px solid rgb(182, 28, 28);
+}
+
+div input.T {
+    border: 1px solid rgb(24, 80, 24);
+}
+
 div input:focus,
 div textarea:focus,
-div select:focus{
-    border:0.5px solid var(--golden-color);
+div select:focus {
+    border: 0.5px solid var(--golden-color);
 }
+
 .error,
 #Error {
     height: 22px;
@@ -222,6 +256,7 @@ div select:focus{
     font-family: mainFont;
     font-weight: normal;
 }
+
 /* .success{
     height: 16px;
     text-align: left;
@@ -229,7 +264,7 @@ div select:focus{
     font-family: mainFont;
     margin-bottom: 10px;
 } */
-button{
+button {
     padding: 10px 16px;
     background-color: var(--golden-color);
     color: var(--golden-btn-text-color);
@@ -237,30 +272,35 @@ button{
     font-family: mainFont;
     width: 100%;
     letter-spacing: 2px;
-    margin: 15px 0;   
+    margin: 15px 0;
 }
-button.light{
-    background-color:var(--button-light);
+
+button.light {
+    background-color: var(--button-light);
     border: none;
     color: #ffffff;
 }
+
 button:hover {
     cursor: pointer;
     background-color: var(--golden-hover-color);
     color: var(--golden-btn-text-color);
 }
+
 button.light:hover {
-  background-color: var(--button-hover-light);
-  color: white;
+    background-color: var(--button-hover-light);
+    color: white;
 }
-.feed-back P{
-    color:var(--text-dark);
+
+.feed-back P {
+    color: var(--text-dark);
     font-size: 10px;
     font-family: mainFont;
     text-align: center;
     letter-spacing: 1px;
     line-height: 1.4;
 }
-.feed-back P.light{
+
+.feed-back P.light {
     color: var(--button-light);
 }
