@@ -221,35 +221,7 @@
     color: #000000;
     box-shadow: 0 0 15px rgba(231, 192, 117, 0.3);
 }
-@media (max-width: 1024px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 768px) {
-    .box h2 {
-        font-size: 32px;
-    }
-
-    .description-text {
-        font-size: 17px;
-    }
-
-    .join-us {
-        padding: 80px 5%;
-    }
-}
-@media (max-width: 600px) {
-    .team-grid {
-        grid-template-columns: 1fr;
-        padding: 40px 20px;
-    }
-
-    .header h1 {
-        font-size: 40px;
-    }
-}
 body.light {
     background-color: var(--background-light) !important;
 }

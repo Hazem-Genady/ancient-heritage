@@ -1,4 +1,4 @@
-let current = null; //مكان لتخزين قيمة الصورة المضغوطة
+let current = null;
 let cnt = document.getElementById("information-container");
 let iframe = document.getElementById("map-iframe");
 const sounds = {
@@ -32,21 +32,16 @@ function mapMod() {
 //----------------------------------------------------------------------------------------------------------------------------------
 
 function selected(value) {
-    // window.parent
-    // iframeدي عشان الفانكشن بيتم استدعائها داخل الـ
-    // فا مش بيكون شايف الكونتينر اصلا 
-    // parentتخليه يخرج للـ
-    // اللي هو صفحة الماب ويدور فيها
     let infoCnt = window.parent.document.getElementById("information-container");
-    if (!infoCnt.classList.contains("selected") || current === value) { //يشوف لو الكونتينر معروض وتم الضغط على نفس الزرار
+    if (!infoCnt.classList.contains("selected") || current === value) {
         infoCnt.classList.toggle("selected");
         window.parent.document.getElementById("map-container").classList.toggle("selected");
         window.parent.document.getElementById("map-iframe").classList.toggle("selected");
         window.parent.document.getElementById("map-main").classList.toggle("selected");
     }
-    current = value; //بنعرف قيمة اخر زرار عشان لو دوسنا عليه تاني
+    current = value;
 
-    if (value == "pyramid") { //بنغير الصورة والمعلومات المعروضة على حسب القيمة المبعوتة
+    if (value == "pyramid") {
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">The Great<br>Pyramid of Giza</p>
@@ -327,8 +322,6 @@ function selected(value) {
         `;
     }
     window.parent.imageMapResize();
-    //imapعشان يظبط ابعاد الـ
-    //للصورة الجديدة
 
     let p = document.querySelectorAll("#icons-container img");
     p.forEach(e => {
@@ -377,12 +370,7 @@ const add = 0.2;
 function zoomIn() {
     let map = document.getElementById("iframe-container");
     let scale = parseFloat(map.style.scale) || 1;
-    //style.scale عشان الرقم اللي بييجي من parsefloat
-    // string بيكون على هيئة
-    // "1.5"
-    // فا هي بتخلي القيمة تكون رقم
-    // ممكن مع اول ضغطة مفيش قيمة تتبعت فا عملنا || 1
-    if (scale < max_scale) { //عشان ميعملش زوم اكتر من 3
+    if (scale < max_scale) {
         map.style.scale = scale + add;
     }
     if (parseFloat(map.style.scale) > normal_scale) {
@@ -392,7 +380,7 @@ function zoomIn() {
 function zoomout() {
     let map = document.getElementById("iframe-container");
     let scale = parseFloat(map.style.scale);
-    if (scale > normal_scale) { //عشان ميصغرش عن 1
+    if (scale > normal_scale) {
         map.style.scale = scale - add;
     }
     if (parseFloat(map.style.scale) === normal_scale) {

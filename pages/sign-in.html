@@ -79,19 +79,9 @@
                 <p class="description">Access the world's most exclusive digital reliquary.<br>
                     Secure your identity to unlock provenance records,<br>
                     high-fidelity artifact scans, and scholarly research.</p>
-                <!-- <div class="end">
-                    <div>
-                        <h4>12.5k</h4>
-                        <p>ARTIFACTS DIGITIZED</p>
-                    </div>
-                    <div>
-                        <h4>85</h4>
-                        <p>PARTICIPATING MUSEUMS</p>
-                    </div>
-                </div> -->
             </section>
             <section class="left">
-                <form class="sign-in" name="signIn" method="post" onsubmit="dataForm(event)">
+                <form class="sign-in" name="signIn" method="post" onsubmit="dataForm(event)" autocomplete="off">
                     <h6 class="errorS"></h6>
                     <div class="form-link">
                         <a href="sign-in.html" class="active">SIGN IN</a>
@@ -102,7 +92,6 @@
                         <input id="e" type="text" name="Email" placeholder="ancientheritage@gmail.com"
                             onfocus="clearM(0)" onblur="email()">
                         <h6 class="error"></h6>
-                        <!-- <h6 class="success"></h6> -->
                     </div>
                     <div>
                         <label for="p">PASSWORD:</label>
@@ -112,7 +101,6 @@
                         <i class="fa-regular fa-eye" id="hide_eye" onclick="hide()"></i>
                         </div>
                         <h6 class="error"></h6>
-                        <!-- <h6 class="success"></h6> -->
                     </div>
                     <p class="or">OR</p>
                     <div class="diff-way">
@@ -145,7 +133,6 @@
             <a href="about.html">About Us</a>
         </div>
     </footer>
-
     <script src="../js/main.js"></script>
     <script src="../js/sign-in.js"></script>
 </body>

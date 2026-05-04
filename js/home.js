@@ -3,7 +3,7 @@ window.onload = function () {
     const pic2 = document.getElementById("pic2");
     pic1.classList.add("transition");
     pic2.classList.add("transition");
-};//a functionfor every time the user reload the page the imgs transition from out the page to its position
+}
 
 let headerElement = document.querySelector(".back");
 function homeMod() {
@@ -51,4 +51,4 @@ let savedhome = localStorage.getItem("home");
 let savedMod = localStorage.getItem("theme");
 if (savedhome !== savedMod) {
     homeMod();
-}//adding class light to every thing to change the color in light mode and save light mode 
+}
