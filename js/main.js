@@ -8,6 +8,13 @@ if (log === "loged") {
     Icon.style.display = "none";
     Button.style.display = "block";
 }
+// if (!log) {
+//     Icon.style.display = "none";
+//     Button.style.display = "block";
+// } else {
+//     Icon.style.display = "block";
+//     Button.style.display = "none";
+// }
 
 function changeMod() {
     document.querySelector(".mode-cnt").classList.toggle("light");

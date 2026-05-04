@@ -106,8 +106,11 @@
                     </div>
                     <div>
                         <label for="p">PASSWORD:</label>
-                        <input id="p" type="password" name="Password" placeholder="••••••••" onfocus="clearM(1)"
-                            onblur="password()">
+                        <div class="pass">
+                        <input id="p" type="password" name="Password" placeholder="••••••••" onfocus="clearM(1)" onblur="password()" > 
+                        <i class="fa-regular fa-eye-slash" id="show_eye" onclick="show()"> </i> 
+                        <i class="fa-regular fa-eye" id="hide_eye" onclick="hide()"></i>
+                        </div>
                         <h6 class="error"></h6>
                         <!-- <h6 class="success"></h6> -->
                     </div>

@@ -1,3 +1,17 @@
+  let show_password = document.querySelector("#show_eye");
+  let hide_password = document.querySelector("#hide_eye");
+  let  input_pass = document.querySelector("#p");
+function show(event){
+  show_password.style.display = "none"
+  hide_password.style.display = "inline"
+  input_pass.type ="text"
+}
+function hide(event){
+  show_password.style.display = "inline"
+  hide_password.style.display = "none"
+  input_pass.type ="password"
+}
+
 let storeData = localStorage.getItem("user")
 let userData = JSON.parse(storeData);
 function email(event) {
@@ -92,7 +106,7 @@ function inMod() {
     ".a", ".miniTitle", "h1 span", "h1", ".line",
     ".description", ".sign-in", "button", ".or",
     "form div", ".form-link .active",
-    ".form-link .sign",
+    ".form-link .sign",".pass i"
   ];
 
   elementsToToggle.forEach(selector => {

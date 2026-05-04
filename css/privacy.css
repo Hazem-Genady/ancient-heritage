@@ -59,10 +59,9 @@ h3 {
     font-size: 25px;
     padding: 10px 0;
 }
-
-p, li {
-
-    color: var(--small-text-color);
+p ,li{
+    
+    color: var(--small-text-dark);
     font-family: mainFont;
     line-height: 1.4;
     letter-spacing: 1px;

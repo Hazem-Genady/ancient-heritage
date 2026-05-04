@@ -1,3 +1,26 @@
+  let show_password = document.querySelectorAll(".show_eye");
+  let hide_password = document.querySelectorAll(".hide_eye");
+  show_password[0].style.display ="inline";
+  hide_password[0].style.display ="none";
+
+  show_password[1].style.display ="inline";
+  hide_password[1].style.display ="none";
+  let  input_pass = document.querySelector("#p");
+  let  input_Cpass = document.querySelector("#cp");
+function show(index){
+  show_password[index].style.display = "none";
+  hide_password[index].style.display = "inline";
+  input_pass.type ="text";
+  input_Cpass.type ="text";
+}
+function hide(index){
+  show_password[index].style.display = "inline";
+  hide_password[index].style.display = "none";
+  input_Cpass.type ="password";
+  input_pass.type ="password";
+}
+
+
 function Name(event) {
   let name = document.forms["signUp"]["Name"].value;
   let error1 = document.getElementsByClassName("error")[0];
@@ -141,7 +164,7 @@ function upMod() {
     }
   });
 
-  const groups = ["div label", "div input", ".sign-up p", "div option", , ".Q a"];
+  const groups = ["div label", "div input", ".sign-up p", "div option", , ".Q a" ,".pass i"];
   groups.forEach(selector => {
     document.querySelectorAll(selector).forEach(el => {
       el.classList.toggle("light");

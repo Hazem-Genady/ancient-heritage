@@ -293,10 +293,9 @@ button.light:hover {
     background-color: var(--button-hover-light);
     color: white;
 }
-
-.feed-back P {
-    color: var(--text-dark);
-    font-size: 10px;
+.feed-back P{
+    color:var(--text-dark);
+    font-size: 14px;
     font-family: mainFont;
     text-align: center;
     letter-spacing: 1px;

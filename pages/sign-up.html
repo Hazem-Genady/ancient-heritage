@@ -10,8 +10,6 @@
 
     <link rel="stylesheet" href="../css/all.min.css">
 
-
-
 </head>
 
 <body>
@@ -115,15 +113,21 @@
                     </div>
                     <div>
                         <label for="p">*PASSWORD:</label>
-                        <input id="p" name="Password" type="password" placeholder="••••••••" onfocus="clearM(2)"
-                            onblur="password()">
+                        <div class="pass">
+                        <input id="p" name="Password" type="password" placeholder="••••••••" onfocus="clearM(2)" onblur="password()">
+                        <i class="fa-regular fa-eye-slash show_eye" onclick="show(0)"> </i> 
+                        <i class="fa-regular fa-eye hide_eye" onclick="hide(0)"></i> 
+                        </div>
                         <h6 class="error"></h6>
                         <!-- <h6 class="success"></h6> -->
                     </div>
                     <div>
                         <label for="cp">*CONFIRM PASSWORD:</label>
-                        <input id="cp" name="confirmPassword" type="password" placeholder="••••••••" onfocus="clearM(3)"
-                            onblur="cpassword()">
+                        <div class="pass">
+                        <input id="cp" name="confirmPassword" type="password" placeholder="••••••••" onfocus="clearM(3)" onblur="cpassword()">
+                        <i class="fa-regular fa-eye-slash show_eye"  onclick="show(1)"> </i> 
+                        <i class="fa-regular fa-eye hide_eye"  onclick="hide(1)"></i> 
+                        </div>
                         <h6 class="error"></h6>
                         <!-- <h6 class="success"></h6> -->
                     </div>
