@@ -51,7 +51,7 @@ img {
 main i {
     color: var(--golden-color);
     font-size: large;
-    
+
 }
 
 main h1 {
@@ -98,7 +98,7 @@ main h6 {
 
 .img:hover {
     transform: scale(1.1);
-    
+
 }
 
 .header {
@@ -154,10 +154,10 @@ main h6 {
     height: 160px;
 }
 
-.remove-icon{
+.remove-icon {
     color: black;
 }
 
-.card.light .remove-icon{
-    color:  rgb(232, 115, 115);
+.card.light .remove-icon {
+    color: rgb(232, 115, 115);
 }

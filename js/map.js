@@ -401,22 +401,6 @@ function zoomout() {
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 
-function places() {
-    if (!document.getElementById("menu-links").classList.contains("places")) {
-        document.getElementById("menu-links").classList.toggle("places");
-        document.getElementById("places").classList.toggle("selected");
-        document.getElementById("map").classList.toggle("selected");
-    }
-}
-
-function map() {
-    if (document.getElementById("menu-links").classList.contains("places")) {
-        document.getElementById("menu-links").classList.toggle("places");
-        document.getElementById("places").classList.toggle("selected");
-        document.getElementById("map").classList.toggle("selected");
-    }
-}
-
 iframe.onload = () => {
     if (cnt.classList.contains("light")) {
         let currentMap = localStorage.setItem("mapMod", "light");

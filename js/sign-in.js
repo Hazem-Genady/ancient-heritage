@@ -14,8 +14,6 @@ function hide(event){
 
 let storeData = localStorage.getItem("user")
 let userData = JSON.parse(storeData);
-console.log(userData.userData)
-
 function email(event) {
   let emailV = document.forms["signIn"]["Email"].value;
   let error1 = document.getElementsByClassName("error")[0];
@@ -80,7 +78,7 @@ function dataForm(event) {
     if ((userData.Email == emailV) && (userData.Password == passwordV)) {
       setTimeout(() => {
         window.location.href = "../pages/profile.html";
-        localStorage.setItem("log","loged");
+        localStorage.setItem("log", "loged");
       }, 300);
     }
     else {
@@ -93,9 +91,6 @@ function dataForm(event) {
 
   }
 }
-
-
-
 
 
 function clearM(index) {
@@ -128,11 +123,12 @@ function inMod() {
     });
   });
 }
-if (document.querySelector(".a").classList.contains("light")) {
-  let currentIn = localStorage.setItem("InMod", "light");
+const container = document.querySelector(".a");
+if (container.classList.contains("light")) {
+  localStorage.setItem("InMod", "light");
 }
 else {
-  let currentIn = localStorage.setItem("InMod", "dark");
+  localStorage.setItem("InMod", "dark");
 }
 let savedIn = localStorage.getItem("InMod");
 let savedMod = localStorage.getItem("theme");

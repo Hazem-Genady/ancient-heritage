@@ -2,15 +2,15 @@ let storeData = localStorage.getItem("user")
 let userData = JSON.parse(storeData);
 
 if (userData.Name) {
-    document.getElementById("userName").innerText = "Hello " + userData.Name;
+    document.getElementById("userName").innerText =  userData.Name;
     document.getElementById("userEmail").innerText = userData.Email;
 }
-
+//taking the user information form the local storage to appeare in profile
 function removeFromLocal(key, id) {
     let savedItems = JSON.parse(localStorage.getItem(key)) || [];
     let updatedItems = savedItems.filter(el => el.id !== id);
     localStorage.setItem(key, JSON.stringify(updatedItems));
-}
+}//function to remove something from the favourite
 
 
 
@@ -22,13 +22,13 @@ let artifactData = JSON.parse(Data);
 
 if (localStorage.getItem("favorite") === null) {
     document.getElementById("art").innerText = "add something you like!";
-}
+}//changing the text in case the favourites are empty
 
 for (let j of artifactData || []) {
     let card = document.createElement("div");
     let pic = document.createElement("img");
     let picDiv = document.createElement("div");
-    let textContainer = document.createElement("div");//creating elements for every piece of artifact
+    let textContainer = document.createElement("div");
     let nameInfo = document.createElement("div");
     let name = document.createElement("h2");
     let matrial = document.createElement("h5");
@@ -80,7 +80,7 @@ for (let j of artifactData || []) {
 
 
     document.querySelector(".fav").appendChild(card)
-}
+} //every time the user click on a heart in the search page it'll appeare in the favorite
 
 let main = document.querySelector("main");
 function homeMod() {
@@ -112,22 +112,10 @@ function homeMod() {
         container.querySelector(".iconBox")?.classList.toggle("light");
         container.querySelector(".arrow")?.classList.toggle("light");
     });
-}
-
-if (main.classList.contains("light")) {
-    let currenS = localStorage.setItem("homeMod", "light");
-}
-else {
-    let currentS = localStorage.setItem("homeMod", "dark");
-}
-let savedS = localStorage.getItem("homeMod");
-let savedMod = localStorage.getItem("theme");
-if (savedS !== savedMod) {
-    homeMod();
-}
+}//adding class light to everything to change the colors of every element in the light mode
 
 
-function pop() {
+function pop() {//function to appeare a message for the user to sign out
     let box = document.createElement("div");
     box.classList.add("box");
     let icony = document.createElement("i");
@@ -161,8 +149,6 @@ function pop() {
     no.innerText = "cancel";
 
 
-
-
     document.querySelector(".no" || ".no.light").onclick = () => { document.querySelector("#pop").removeChild(box); };
     document.querySelector(".yes" || ".yes.light").onclick = () => {
         let Button = document.getElementById("sign-btn");
@@ -170,8 +156,23 @@ function pop() {
         Icon.style.display = "none";
         Button.style.display = "block";
         localStorage.removeItem("favorite");
+        localStorage.removeItem("archive");
         window.location.href = "../index.html";
         localStorage.removeItem("log");
     };
 
 }
+}
+
+if (main.classList.contains("light")) {
+    let currenS = localStorage.setItem("homeMod", "light");
+}
+else {
+    let currentS = localStorage.setItem("homeMod", "dark");
+}
+let savedS = localStorage.getItem("homeMod");
+let savedMod = localStorage.getItem("theme");
+if (savedS !== savedMod) {
+    homeMod();
+}//saving the light mode in the local storage
+
