@@ -114,18 +114,6 @@ function homeMod() {
     });
 }//adding class light to everything to change the colors of every element in the light mode
 
-if (main.classList.contains("light")) {
-    let currenS = localStorage.setItem("homeMod", "light");
-}
-else {
-    let currentS = localStorage.setItem("homeMod", "dark");
-}
-let savedS = localStorage.getItem("homeMod");
-let savedMod = localStorage.getItem("theme");
-if (savedS !== savedMod) {
-    homeMod();
-}
-
 
 function pop() {//function to appeare a message for the user to sign out
     let box = document.createElement("div");
@@ -161,8 +149,6 @@ function pop() {//function to appeare a message for the user to sign out
     no.innerText = "cancel";
 
 
-
-
     document.querySelector(".no" || ".no.light").onclick = () => { document.querySelector("#pop").removeChild(box); };
     document.querySelector(".yes" || ".yes.light").onclick = () => {
         let Button = document.getElementById("sign-btn");
@@ -172,13 +158,10 @@ function pop() {//function to appeare a message for the user to sign out
         localStorage.removeItem("favorite");
         localStorage.removeItem("archive");
         window.location.href = "../index.html";
-        let log = "signedOut" ;
-        localStorage.setItem('log', JSON.stringify(log));
+        localStorage.removeItem("log");
     };
 
-<<<<<<< Updated upstream
 }
-=======
 }
 
 if (main.classList.contains("light")) {
@@ -192,4 +175,4 @@ let savedMod = localStorage.getItem("theme");
 if (savedS !== savedMod) {
     homeMod();
 }//saving the light mode in the local storage
->>>>>>> Stashed changes
+
