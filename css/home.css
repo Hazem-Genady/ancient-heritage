@@ -199,7 +199,7 @@ b:hover{
 }
 
 .coptic {
-    background-image: url(../assets/images/Coptic_Museum.jpeg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3)), url(../assets/images/Coptic_Museum.jpeg);
     background-size: cover;
 }
 

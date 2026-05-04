@@ -216,12 +216,25 @@ div input {
     transition: 0.2s;
     width: 100%;
 }
-.box{
+.pass{
     position: relative;
 }
-.box i{
+.pass i{
     position: absolute;
-    
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--small-text-dark);  
+}
+.pass i.light{
+    color: var(--big-text-light); 
+}
+#show_eye{
+   display: inline;
+}
+#hide_eye{
+    display: none;
     
 }
 div input.light{
@@ -302,9 +315,11 @@ button.light:hover {
 .Q a{
     color: var(--golden-color);
     text-decoration: none;
+    border-bottom: 1px solid var(--golden-color);
 }
 .Q a.light{
     color: var(--big-text-light);
+    border-bottom: 1px solid var(--big-text-light);
 }
 
 .or {

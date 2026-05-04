@@ -199,6 +199,21 @@ div input.light:focus
 ,div select.light:focus {
    border:0.5px solid var(--big-text-light);
 }
+.pass{
+    position: relative;
+}
+.pass i{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer; 
+    color: var(--small-text-dark); 
+}
+.pass i.light{
+    color: var(--big-text-light); 
+}
+
 .nationality{
     margin-bottom: 15px;
 }
@@ -259,7 +274,9 @@ button.light:hover {
 .Q a{
     color: var(--golden-color);
     text-decoration: none;
+    border-bottom: 1px solid var(--golden-color);
 }
 .Q a.light{
     color: var(--big-text-light);
+    border-bottom: 1px solid var(--big-text-light);
 }

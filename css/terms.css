@@ -54,7 +54,7 @@ h3{
 }
 p ,li{
     
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     font-family: mainFont;
     line-height: 1.4;
     letter-spacing: 1px;

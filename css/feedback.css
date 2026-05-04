@@ -255,7 +255,7 @@ button.light:hover {
 }
 .feed-back P{
     color:var(--text-dark);
-    font-size: 10px;
+    font-size: 14px;
     font-family: mainFont;
     text-align: center;
     letter-spacing: 1px;
