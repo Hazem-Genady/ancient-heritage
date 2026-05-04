@@ -1,6 +1,9 @@
-//list هنحط يخواتي كل الصور ومعلوماتها في 
-//The List contains dictionaries (objects) => (key : value)
-//كل صورة ليها معلومات مختلفة متخزنة هنا
+function removeFromLocal(key, id) {
+    let savedItems = JSON.parse(localStorage.getItem(key)) || [];
+    let updatedItems = savedItems.filter(el => el.id !== id);
+    localStorage.setItem(key, JSON.stringify(updatedItems));
+}
+
 let products = {
     data: [
         {
@@ -431,176 +434,202 @@ for (let i of products.data) {//لوب عادية
     let textContainer = document.createElement("div")
     textContainer.classList.add("text-container")
 
-    let header = document.createElement("h5")
-    header.classList.add("artifact-header")
-    header.innerText = i.header.toUpperCase()
-    textContainer.appendChild(header)
+    let header = document.createElement("h5");
+    header.classList.add("artifact-header");
+    header.innerText = i.header.toUpperCase();
+    textContainer.appendChild(header);
 
 
 
-    let name = document.createElement("h2")
-    name.classList.add("artifact-name")
-    name.innerText = i.artifactName.toUpperCase() //الاسم  بتاع الاثر بخليه يساوي الاسم اللي في الليست بالترتيب وكابيتال
-    textContainer.appendChild(name)
+    let name = document.createElement("h2");
+    name.classList.add("artifact-name");
+    name.innerText = i.artifactName.toUpperCase();
+    textContainer.appendChild(name);
 
-    let cardFooter = document.createElement("div")
-    cardFooter.classList.add("card-footer")
+    let cardFooter = document.createElement("div");
+    cardFooter.classList.add("card-footer");
 
-    let museum = document.createElement("h6")
-    museum.classList.add("artifacte-subtitle")
-    museum.innerText = i.category.toUpperCase()
-    cardFooter.appendChild(museum)
+    let museum = document.createElement("h6");
+    museum.classList.add("artifacte-subtitle");
+    museum.innerText = i.category.toUpperCase();
+    cardFooter.appendChild(museum);
 
-    let iconBox = document.createElement("div")
-    iconBox.classList.add("icon-box")
+    let iconBox = document.createElement("div");
+    iconBox.classList.add("icon-box");
 
-    let archiveIcon = document.createElement("i")
-    archiveIcon.classList.add("fa-solid", "fa-box-archive", "archive-icon")//icon from FontAwsome.com
-    if (isItemInStorage("archive", i.id)) {//لو الاي دي جوا الليست في اللوكال هتحليها لونها احمر
-        archiveIcon.classList.add("active-icon")
+    let archiveIcon = document.createElement("i");
+    archiveIcon.classList.add("fa-solid", "fa-box-archive", "archive-icon");
+    if (isItemInStorage("archive", i.id)) {
+        archiveIcon.classList.add("active-icon");
     }
     archiveIcon.onclick = () => {
-        addToLocal("archive", i)//الفانكشن الي هتضيف الكارت كله في اللوكال
-        archiveIcon.classList.add("active-icon")
-    }
-    iconBox.appendChild(archiveIcon)
-
-    let HeartIcon = document.createElement("i")
-    HeartIcon.classList.add("fa-solid", "fa-heart", "heart-icon")
-    if (isItemInStorage("favorite", i.id)) {
-        HeartIcon.classList.add("active-icon")
-    }
-    HeartIcon.onclick = () => {
-        addToLocal("favorite", i)
-        HeartIcon.classList.add("active-icon")
-    }
-    iconBox.appendChild(HeartIcon)
-
-    cardFooter.appendChild(iconBox)
-    textContainer.appendChild(cardFooter)
-    card.appendChild(textContainer)
-
-
-    document.getElementById("artifacts-container").appendChild(card)
-}
-
-//filter function
-function filterArtifacts(value) {//onclick in html file
-    let buttons = document.querySelectorAll(".button-value") //ليست فيها كل البوتونز
-    buttons.forEach(button => {//changing color of choosing category
-        if (value.toUpperCase() == button.innerText.toUpperCase()) {
-            button.classList.add("active-category")
+        let log = localStorage.getItem("log");
+        if (log === "loged") {
+            if (archiveIcon.classList.contains("active-icon")) {
+                removeFromLocal("archive", i.id);
+                archiveIcon.classList.remove("active-icon");
+            } else {
+                addToLocal("archive", i);
+                archiveIcon.classList.add("active-icon");
+            }
         }
         else {
-            button.classList.remove("active-category")
+            window.location.href = "sign-up.html";
+        }
+    }
+    iconBox.appendChild(archiveIcon);
+
+    let HeartIcon = document.createElement("i");
+    HeartIcon.classList.add("fa-solid", "fa-heart", "heart-icon");
+    if (isItemInStorage("favorite", i.id)) {
+        HeartIcon.classList.add("active-icon");
+    }
+    HeartIcon.onclick = () => {
+       let log = localStorage.getItem("log");
+        if (log === "loged") {
+            if (HeartIcon.classList.contains("active-icon")) {
+                removeFromLocal("favorite", i.id);
+                HeartIcon.classList.remove("active-icon");
+            } else {
+                addToLocal("favorite", i);
+                HeartIcon.classList.add("active-icon");
+            }
+        }
+        else {
+            window.location.href = "sign-up.html";
+        }
+    }
+    iconBox.appendChild(HeartIcon);
+    cardFooter.appendChild(iconBox);
+    textContainer.appendChild(cardFooter);
+    card.appendChild(textContainer);
+
+
+    document.getElementById("artifacts-container").appendChild(card);
+}
+
+function filterArtifacts(value) {
+    let buttons = document.querySelectorAll(".button-value");
+    buttons.forEach(button => {
+        if (value.toUpperCase() == button.innerText.toUpperCase()) {
+            button.classList.add("active-category");
+        }
+        else {
+            button.classList.remove("active-category");
         }
     })
 
 
     let elements = document.querySelectorAll(".card")
     elements.forEach(e => {
-        let x = value.replaceAll(" ", "-")//نخلي اسم المتحف زي الكلاس بتاعه نشيل المسافات ونحط شرطة
+        let x = value.replaceAll(" ", "-");
         if (value == "All Museums") {
-            e.classList.remove("hide")//display the card
+            e.classList.remove("hide");
         }
 
         else if (e.classList.contains(x)) {
-            e.classList.remove("hide")
+            e.classList.remove("hide");
         }
         else {
-            e.classList.add("hide")//hide the card
+            e.classList.add("hide");
         }
 
     })
 }
 
 function showMethodActive(value) {
-    let methods = document.querySelectorAll(".filter-show span")
-    methods.forEach(method => {//changing color of choosing method
+    let methods = document.querySelectorAll(".filter-show span");
+    methods.forEach(method => {
         if (value.toUpperCase() == method.id.toUpperCase()) {
-            method.classList.add("active-method")
+            method.classList.add("active-method");
         }
         else {
-            method.classList.remove("active-method")
+            method.classList.remove("active-method");
         }
-    })
+    });
 }
 
 function cardDisplay(method) {
     let container = document.getElementById("artifacts-container")
     if (method.toLowerCase() == 'list') {
-        container.classList.add("list")
-
+        container.classList.add("list");
     }
     else
-        container.classList.remove("list")
+        container.classList.remove("list");
 }
 
 
 window.onload = () => {
-    filterArtifacts("All Museums")
-    showMethodActive("grid")
-    cardDisplay('grid')
-} //التلقائي يبقا اول ما نحمل الصفحة
+    filterArtifacts("All Museums");
+    showMethodActive("grid");
+    cardDisplay('grid');
+}
 
+function searcher() {
+    let searchValue = document.getElementById("search-input").value.toUpperCase();
+    let cards = document.querySelectorAll(".card");
 
+    cards.forEach((card) => {
+        let name = card.querySelector(".artifact-name").innerText.toUpperCase();
+        let museum = card.querySelector(".artifacte-subtitle").innerText.toUpperCase();
 
-
-document.getElementById("search").addEventListener("click", () => {
-    let search = document.getElementById("search-input").value
-    let cards = document.querySelectorAll(".card")
-    let names = document.querySelectorAll(".artifact-name")
-    let museums = document.querySelectorAll(".artifacte-subtitle")
-    names.forEach((name, index) => {
-        if (name.innerText.includes(search.toUpperCase()))//هل البحث جواه حروف من اسم اثر معين
-            cards[index].classList.remove("hide")
-        else
-            cards[index].classList.add("hide")
-
-    })
-    museums.forEach((museum, index) => {
-        if (museum.innerText.includes(search.toUpperCase()))//هل البحث جواه حروف من اسم اثر معين
-            cards[index].classList.remove("hide")
-        else
-            cards[index].classList.add("hide")
-
-    })
-
-})
+        if (name.includes(searchValue) || museum.includes(searchValue)) {
+            card.classList.remove("hide");
+        }
+        else {
+            card.classList.add("hide");
+        }
+        if (searchValue === "") {
+            filterArtifacts("All Museums");
+        }
+    });
+}
+document.getElementById("search").addEventListener("click", searcher);
+document.getElementById("search-input").addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        searcher();
+    }
+});
 
 function cardDisplay(method) {
-    let container = document.getElementById("artifacts-container")
+    let container = document.getElementById("artifacts-container");
     if (method.toLowerCase() == 'list')
-        container.classList.add("list")
+        container.classList.add("list");
     else
-        container.classList.remove("list")
+        container.classList.remove("list");
 }
 
 
 let search = document.querySelector(".search-window input");
-let cards = document.querySelectorAll(".card")
+let cards = document.querySelectorAll(".card");
 function searchMod() {
     search.classList.toggle("light");
-    document.querySelector(".search-header").classList.toggle("light")
+    document.querySelector(".search-header").classList.toggle("light");
+    document.getElementById("search").classList.toggle("light");
+    document.querySelectorAll(".heart-icon").forEach(e => {
+        e.classList.toggle("light");
+    });
+    document.querySelectorAll(".archive-icon").forEach(e => {
+        e.classList.toggle("light")
+    });
     cards.forEach((card) => {
-        card.classList.toggle("light")
+        card.classList.toggle("light");
     })
-    // document.querySelector(".active-category").classList.toggle("light")
-    let categories = document.querySelectorAll(".categories button")
+    let categories = document.querySelectorAll(".categories button");
     categories.forEach((category) => {
-        category.classList.toggle("light")
+        category.classList.toggle("light");
     })
-    let text = document.querySelectorAll(".artifact-name")
+    let text = document.querySelectorAll(".artifact-name");
     text.forEach((txt) => {
-        txt.classList.toggle("light")
+        txt.classList.toggle("light");
     })
-    let textS = document.querySelectorAll(".artifacte-subtitle")
+    let textS = document.querySelectorAll(".artifacte-subtitle");
     textS.forEach((txt) => {
-        txt.classList.toggle("light")
+        txt.classList.toggle("light");
     })
-    let icons = document.querySelectorAll(".active-icon")
+    let icons = document.querySelectorAll(".active-icon");
     icons.forEach((icon) => {
-        icon.classList.toggle("light")
+        icon.classList.toggle("light");
     })
     document.querySelector(".filter-show").classList.toggle("light")
     let spans = document.querySelectorAll(".filter-show span")

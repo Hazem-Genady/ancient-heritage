@@ -275,6 +275,7 @@ button {
     width: 100%;
     letter-spacing: 2px;
     margin: 15px 0;
+    transition: 0.3s;
 }
 
 button.light {

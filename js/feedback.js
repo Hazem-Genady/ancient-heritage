@@ -10,9 +10,9 @@ function dataForm(event) {
    let text = document.getElementsByTagName("textarea");
    let success1 = document.getElementsByClassName("success")[0];
    let valid = true;
-   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //بيتاكد ان الايميل مكتوب صح ان يكون جواه @ . حروف انجلش والامتداد
+   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
    if (name.trim() == "") {
-      error1.innerText = "✖ Name is required";
+      error1.innerText = "× Name is required";
       error1.style.color = "rgb(182, 28, 28)";
       input[0].classList.add("E");
       valid = false;
@@ -21,13 +21,13 @@ function dataForm(event) {
       error1.innerText = "";
    }
    if (email.trim() == "") {
-      error2.innerText = "✖ Email is required";
+      error2.innerText = "× Email is required";
       error2.style.color = "rgb(182, 28, 28)";
       input[1].classList.add("E");
       valid = false;
    }
    else if (!emailRegex.test(email)) {
-      error2.innerText = "✖ Not valid email address";
+      error2.innerText = "× Not valid email address";
       error2.style.color = "rgb(182, 28, 28)";
       input[1].classList.add("E");
       valid = false;
@@ -38,7 +38,7 @@ function dataForm(event) {
 
 
    if (message.trim() == "") {
-      error3.innerText = "✖ Message is required";
+      error3.innerText = "× Message is required";
       error3.style.color = "rgb(182, 28, 28)";
       text[0].classList.add("E");
       valid = false;
@@ -47,8 +47,6 @@ function dataForm(event) {
       error3.innerText = "";
    }
    if (valid) {
-      //   success1.innerText = "Login successful  Welcome back!";
-      //  success1.style.color =" rgb(49, 193, 49)"
       input[0].classList.add("T");
       input[1].classList.add("T");
       text[0].classList.add("T");

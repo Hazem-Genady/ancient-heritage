@@ -1,12 +1,13 @@
   let show_password = document.querySelector("#show_eye");
   let hide_password = document.querySelector("#hide_eye");
   let  input_pass = document.querySelector("#p");
-function show(event){
+function show(){
   show_password.style.display = "none"
   hide_password.style.display = "inline"
   input_pass.type ="text"
 }
-function hide(event){
+
+function hide(){
   show_password.style.display = "inline"
   hide_password.style.display = "none"
   input_pass.type ="password"
@@ -14,20 +15,20 @@ function hide(event){
 
 let storeData = localStorage.getItem("user")
 let userData = JSON.parse(storeData);
-function email(event) {
+function email() {
   let emailV = document.forms["signIn"]["Email"].value;
   let error1 = document.getElementsByClassName("error")[0];
   let input = document.getElementsByTagName("input");
-  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //بيتاكد ان الايميل مكتوب صح ان يكون جواه @ . حروف انجلش والامتداد
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (emailV.trim() == "") {
-    error1.innerText = "✖️ Email is required";
+    error1.innerText = "× Email is required";
     error1.style.color = "rgb(182, 28, 28)";
     input[0].classList.add("E");
     return false;
   }
   else if (!emailRegex.test(emailV)) {
-    error1.innerText = "✖️ Not valid email address";
+    error1.innerText = "× Not valid email address";
     error1.style.color = "rgb(182, 28, 28)";
     input[0].classList.add("E");
     return false;
@@ -37,20 +38,21 @@ function email(event) {
     return true;
   }
 }
-function password(event) {
+
+function password() {
   let passwordV = document.forms["signIn"]["Password"].value;
   let error2 = document.getElementsByClassName("error")[1];
   let input = document.getElementsByTagName("input");
-  let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/; //بيقبل حروف وارقام 
+  let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/;
 
   if (passwordV.trim() == "") {
-    error2.innerText = "✖️ Password is required.";
+    error2.innerText = "× Password is required.";
     error2.style.color = "rgb(182, 28, 28)";
     input[1].classList.add("E");
     return false;
   }
   else if (!passwordRegex.test(passwordV)) {
-    error2.innerText = "✖️ Password must be 8+ chars with letters and numbers.";
+    error2.innerText = "× Password must be 8+ chars with letters and numbers.";
     error2.style.color = "rgb(182, 28, 28)";
     input[1].classList.add("E");
     return false;
@@ -60,7 +62,6 @@ function password(event) {
     return true;
   }
 }
-
 
 function dataForm(event) {
   event.preventDefault();
@@ -92,7 +93,6 @@ function dataForm(event) {
   }
 }
 
-
 function clearM(index) {
   let errorM = document.getElementsByClassName("error");
   let successM = document.getElementsByClassName("success");
@@ -100,6 +100,7 @@ function clearM(index) {
   input[index].classList.remove("E");
   errorM[index].innerText = "";
 }
+
 function inMod() {
 
   const elementsToToggle = [
@@ -123,6 +124,7 @@ function inMod() {
     });
   });
 }
+
 const container = document.querySelector(".a");
 if (container.classList.contains("light")) {
   localStorage.setItem("InMod", "light");

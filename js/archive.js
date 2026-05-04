@@ -396,8 +396,8 @@ function addToLocal(key, value) {
 
     for (let i = 0; i < savedItems.length; i++) {
         if (savedItems[i].id === value.id) {
-            isExist = true; // لو لقيناه بنغير الحالة
-            break; // بنوقف اللوب فورا مش محتاجين نكمل
+            isExist = true;
+            break;
         }
     }
     if (isExist)
@@ -412,23 +412,19 @@ function removeFromLocal(key, id) {
     localStorage.setItem(key, JSON.stringify(updatedItems));
 }
 
-//هنعمل العناصر باستخدام الجافا 
-for (let i of archiveData) {//لوب عادية
-    //=> "i" is our counter ---- i.category == the ith value of "category" key in our dictionary(object)   
+for (let i of archiveData) {
 
-    let card = document.createElement("div")
-    let x = i.category.replaceAll(" ", "-")//علشان الكاتيجوري اللي في الأوبجيكت فيها مسافات ولو في مسافات بيعتبر الكلمتين اتنين كلاس مختلفين مش كلاس واحد
-    card.classList.add("card", x, "hide") //adding these classes to each card
+    let card = document.createElement("div");
+    let x = i.category.replaceAll(" ", "-");
+    card.classList.add("card", x, "hide");
 
-    //الديف اللي هيشيل الصورة
     let imgContainer = document.createElement("div")
-    imgContainer.classList.add("image-container")//كلاس عادي له
-    let image = document.createElement("img")//الصورة نفسها
-    image.setAttribute("src", i.image)//adding src attribute and siiting its value to the image path from the dictionary
-    imgContainer.appendChild(image)//نحط الصورة جوا الديف
-    card.appendChild(imgContainer)//نحط الديف جوا الكارت
+    imgContainer.classList.add("image-container")
+    let image = document.createElement("img")
+    image.setAttribute("src", i.image);
+    imgContainer.appendChild(image);
+    card.appendChild(imgContainer);
 
-    //باقي الكود نفس المنطق
     let textContainer = document.createElement("div")
     textContainer.classList.add("text-container")
 
@@ -439,10 +435,10 @@ for (let i of archiveData) {//لوب عادية
 
 
 
-    let name = document.createElement("h2")
-    name.classList.add("artifact-name")
-    name.innerText = i.artifactName.toUpperCase() //الاسم  بتاع الاثر بخليه يساوي الاسم اللي في الليست بالترتيب وكابيتال
-    textContainer.appendChild(name)
+    let name = document.createElement("h2");
+    name.classList.add("artifact-name");
+    name.innerText = i.artifactName.toUpperCase();
+    textContainer.appendChild(name);
 
     let cardFooter = document.createElement("div")
     cardFooter.classList.add("card-footer")
@@ -457,7 +453,7 @@ for (let i of archiveData) {//لوب عادية
 
     let removeIcon = document.createElement("i");
     removeIcon.classList.add("fa-solid", "fa-trash", "remove-icon");
-    removeIcon.style.cursor = "pointer"; //
+    removeIcon.style.cursor = "pointer";
     removeIcon.onclick = () => {
         removeFromLocal("archive", i.id);
         card.remove();

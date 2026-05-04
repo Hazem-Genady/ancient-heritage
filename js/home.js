@@ -1,9 +1,9 @@
-window.onload = function() {
-        const pic1 = document.getElementById("pic1");
-        const pic2 = document.getElementById("pic2");
-        pic1.classList.add("transition");
-        pic2.classList.add("transition");
-    };//a functionfor every time the user reload the page the imgs transition from out the page to its position
+window.onload = function () {
+    const pic1 = document.getElementById("pic1");
+    const pic2 = document.getElementById("pic2");
+    pic1.classList.add("transition");
+    pic2.classList.add("transition");
+}
 
 let headerElement = document.querySelector(".back");
 function homeMod() {
@@ -15,15 +15,11 @@ function homeMod() {
     document.querySelector(".homeEnd").classList.toggle("light");
     document.querySelector("#pic1").classList.toggle("light");
     document.querySelector("#pic2").classList.toggle("light");
-    let img1 =document.querySelector("#pic1");
+    document.querySelector(".icon").classList.toggle("light");
+    let img1 = document.querySelector("#pic1");
     let img2 = document.querySelector("#pic2");
-    if(img1.classList.contains("light")){img1.src="assets/Logos/Gemini_Generated_Image_o3y9wbo3y9wbo3y9.png";}else{img1.src="assets/Logos/8cc965f1bdc89d973ee405eeeba73d60.jpg";}
-    if(img2.classList.contains("light")){img2.src="assets/Logos/Gemini_Generated_Image_wdye0ewdye0ewdye.png";}else{img2.src="assets/Logos/e0693429b82dbaf5307eff5f7196b891.jpg";}
-
-
-
-
-
+    if (img1.classList.contains("light")) { img1.src = "assets/Logos/Gemini_Generated_Image_o3y9wbo3y9wbo3y9.png"; } else { img1.src = "assets/Logos/8cc965f1bdc89d973ee405eeeba73d60.jpg"; }
+    if (img2.classList.contains("light")) { img2.src = "assets/Logos/Gemini_Generated_Image_wdye0ewdye0ewdye.png"; } else { img2.src = "assets/Logos/e0693429b82dbaf5307eff5f7196b891.jpg"; }
 
 
     const elementsToToggle = [
@@ -55,5 +51,4 @@ let savedhome = localStorage.getItem("home");
 let savedMod = localStorage.getItem("theme");
 if (savedhome !== savedMod) {
     homeMod();
-}//adding class light to every thing to change the color in light mode and save light mode 
- 
+}

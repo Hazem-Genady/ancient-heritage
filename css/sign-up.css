@@ -7,7 +7,6 @@
     --text-dark: #a4a2a8;
     --active-text: #987822;
     --small-text-dark: #b5aa9b;
-
     --navBar-color-light: rgb(242, 237, 228, 0.8);
     --background-light: #f2ede4;
     --button-light: #937C63;
@@ -23,7 +22,8 @@
     font-family: mainFont;
     src: url(../assets/Fonts/noto-serif.regular.ttf);
 }
-body{
+
+body {
     cursor: default;
 }
 
@@ -111,6 +111,7 @@ h1.light {
     padding: 50px 50px;
     width: 40%;
     height: auto;
+    border-radius: 20px;
 }
 
 .left.light {
@@ -120,7 +121,6 @@ h1.light {
 .sign-up {
     display: flex;
     flex-direction: column;
-    /* gap: 15px; */
     width: 100%;
     border-radius: 20px;
 }
@@ -232,22 +232,25 @@ div select:focus {
 div input.light:focus, div select.light:focus {
     border: 0.5px solid var(--big-text-light);
 }
-.pass{
+
+.pass {
     position: relative;
 }
-.pass i{
+
+.pass i {
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    cursor: pointer; 
-    color: var(--small-text-dark); 
-}
-.pass i.light{
-    color: var(--big-text-light); 
+    cursor: pointer;
+    color: var(--small-text-dark);
 }
 
-.nationality{
+.pass i.light {
+    color: var(--big-text-light);
+}
+
+.nationality {
     margin-bottom: 15px;
 }
 
@@ -259,13 +262,6 @@ div input.light:focus, div select.light:focus {
     font-weight: normal;
 }
 
-/* .success{
-    height: 16px;
-    text-align: left;
-    font-size: 20px;
-    font-family: mainFont;
-    margin-bottom: 10px;
-} */
 button {
     padding: 10px 16px;
     background-color: var(--golden-color);

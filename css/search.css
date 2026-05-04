@@ -1,41 +1,12 @@
-/* :root {
-    --navBar-color-dark: #131313e6;
-    --navBar-color-light: #fef8efe6;
-    --background-dark: #0a0a0a;
-    --background-light: #f8f2ea;
-    --golden-color: #e7c075;
-    --golden-hover-color: #bb954f;
-    --golden-btn-text-color: #432f01;
-    --text-dark: #a4a2a8;
-    --text-light: #4e4635;
-    --active-text: rgb(152, 120, 34);
-    --active-text: #987822;
-    --big-text-light: #2b240a;
-    --small-text-dark: #b5aa9b;
-    --footer-light: #e8d9ac;
-    --button-light: #765700;
-    --card-background-color: #353534;
-    --container-color-light: #fdedbf;
-    --container-second-light: #ffffff;
-} */
 :root {
     --navBar-color-dark: #131313e6;
-    /* --navBar-color-light: #fef8efe6; */
     --background-dark: #0a0a0a;
-    /* --background-light: #f8f2ea; */
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
     --golden-btn-text-color: #432f01;
     --text-dark: #a4a2a8;
-    /* --text-light: #4e4635; */
     --active-text: #987822;
-    /* --big-text-light: #2b240a; */
     --small-text-dark: #b5aa9b;
-    /* --footer-light: #e8d9ac;
-    --button-light: #765700;
-    --container-color-light: #fdedbf;
-    --container-second-light: #383010; */
-    /*بني*/
     --navBar-color-light: rgb(242, 237, 228, 0.8);
     --background-light: #f2ede4;
     --button-light: #937C63;
@@ -44,9 +15,12 @@
     --card-background-color: #353534;
     --container-color-light: #F9F3E5;
     --container-second-light: #ffffff;
-
     --text-light: #6B4F3A;
     --big-text-light: #3E2F23;
+}
+
+img {
+    border-radius: 10px;
 }
 
 main {
@@ -84,8 +58,6 @@ main {
     padding-left: 12px;
 }
 
-
-
 .search-window input.light {
     background-color: var(--container-second-light);
     color: #0a0a0a;
@@ -107,14 +79,21 @@ input.light::placeholder {
     cursor: pointer;
     border: none;
     transition: 0.3s;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .search-window button.light {
-    background-color: var(--active-text);
+    background-color: var(--button-light);
+    color: white;
 }
 
 .search-window button:hover {
     background-color: var(--golden-hover-color);
+}
+
+.search-window button.light:hover {
+    background-color: var(--button-hover-light);
 }
 
 .filters {
@@ -167,13 +146,12 @@ input.light::placeholder {
 .categories {
     display: flex;
     gap: 20px;
-    /* margin-top: 15px; */
-    /* justify-content: space-between; */
+
 }
 
 .categories button {
     padding: 8px 16px;
-    border-radius: 3em;
+    border-radius: 15px;
     border: 2px solid var(--golden-color);
     background-color: transparent;
     color: var(--small-text-dark);
@@ -181,9 +159,19 @@ input.light::placeholder {
     transition: 0.3s;
 }
 
+.categories button:hover {
+    background-color: var(--golden-color);
+    color: var(--golden-btn-text-color);
+}
+
 .categories button.light {
     border: 2px solid var(--button-light);
     color: var(--text-light);
+}
+
+.categories button.light:hover {
+    background-color: var(--button-light);
+    color: white;
 }
 
 .active-category {
@@ -197,11 +185,9 @@ input.light::placeholder {
     color: white !important;
 }
 
-
 #artifacts-container {
     display: flex;
     flex-wrap: wrap;
-
     align-items: center;
     justify-content: center;
     padding: 2em 0;
@@ -250,7 +236,6 @@ img {
     transition: 0.3s;
 }
 
-
 .artifact-name.light,
 #artifacts-container.list .artifact-name.light {
     color: var(--big-text-light);
@@ -295,6 +280,11 @@ img {
     cursor: pointer;
 }
 
+.heart-icon.light,
+.archive-icon.light {
+    color: var(--button-light);
+}
+
 .active-icon {
     color: black;
 }
@@ -317,7 +307,6 @@ img {
     position: relative;
     display: flex;
     gap: 15px;
-
     background-color: var(--card-background-color);
     width: 100%;
     max-width: none;
@@ -326,7 +315,6 @@ img {
     border-radius: 20px;
     transition: 0.3s;
 }
-
 
 #artifacts-container.list .image-container {
     text-align: center;
@@ -369,7 +357,6 @@ img {
     transition: 0.3s;
 }
 
-
 #artifacts-container.list .card-footer {
     position: absolute;
     bottom: 10px;
@@ -377,7 +364,6 @@ img {
     flex-direction: column;
     gap: 12px;
 }
-
 
 #artifacts-container.list .icon-box {
     width: 100%;

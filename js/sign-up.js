@@ -1,45 +1,55 @@
-  let show_password = document.querySelectorAll(".show_eye");
-  let hide_password = document.querySelectorAll(".hide_eye");
-  show_password[0].style.display ="inline";
-  hide_password[0].style.display ="none";
+let show_password = document.querySelectorAll(".show_eye");
+let hide_password = document.querySelectorAll(".hide_eye");
+show_password[0].style.display = "inline";
+hide_password[0].style.display = "none";
+show_password[1].style.display = "inline";
+hide_password[1].style.display = "none";
+let input_pass = document.querySelector("#p");
+let input_Cpass = document.querySelector("#cp");
 
-  show_password[1].style.display ="inline";
-  hide_password[1].style.display ="none";
-  let  input_pass = document.querySelector("#p");
-  let  input_Cpass = document.querySelector("#cp");
-function show(index){
+function show1(index) {
   show_password[index].style.display = "none";
   hide_password[index].style.display = "inline";
-  input_pass.type ="text";
-  input_Cpass.type ="text";
+  input_pass.type = "text";
 }
-function hide(index){
+
+function hide1(index) {
   show_password[index].style.display = "inline";
   hide_password[index].style.display = "none";
-  input_Cpass.type ="password";
-  input_pass.type ="password";
+  input_pass.type = "password";
 }
 
+function show2(index) {
+  show_password[index].style.display = "none";
+  hide_password[index].style.display = "inline";
+  input_Cpass.type = "text";
+}
 
-function Name(event) {
+function hide2(index) {
+  show_password[index].style.display = "inline";
+  hide_password[index].style.display = "none";
+  input_Cpass.type = "password";
+}
+
+function NameCheck() {
   let name = document.forms["signUp"]["Name"].value;
   let error1 = document.getElementsByClassName("error")[0];
   let input = document.getElementsByTagName("input");
   let englishRegex = /^[A-Za-z ]+$/;
   if (name.trim() == "") {
-    error1.innerText = "✖ Name is required";
+    error1.innerText = "× Name is required";
     error1.style.color = "rgb(182, 28, 28)";
     input[0].classList.add("E");
     return false;
   }
   else if (!englishRegex.test(name)) {
-    error1.innerText = "✖ Name must contain only English letters";
+    error1.innerText = "× Name must contain only English letters";
     error1.style.color = "rgb(182, 28, 28)";
     input[0].classList.add("E");
     return false;
   }
   else if (name.length < 3) {
-    error1.innerText = "✖ Name must be at least 3 characters";
+    error1.innerText = "× Name must be at least 3 characters";
     error1.style.color = "rgb(182, 28, 28)";
     input[0].classList.add("E");
     return false;
@@ -49,19 +59,20 @@ function Name(event) {
     return true;
   }
 }
-function Email(event) {
+
+function EmailCheck() {
   let email = document.forms["signUp"]["Email"].value;
   let error2 = document.getElementsByClassName("error")[1];
   let input = document.getElementsByTagName("input");
   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //بيتاكد ان الايميل مكتوب صح ان يكون جواه @ . حروف انجلش والامتداد
   if (email.trim() == "") {
-    error2.innerText = "✖ Email is required";
+    error2.innerText = "× Email is required";
     error2.style.color = "rgb(182, 28, 28)";
     input[1].classList.add("E");
     return false;
   }
   else if (!emailRegex.test(email)) {
-    error2.innerText = "✖ Not valid email address";
+    error2.innerText = "× Not valid email address";
     error2.style.color = "rgb(182, 28, 28)";
     input[1].classList.add("E");
     return false;
@@ -71,19 +82,20 @@ function Email(event) {
     return true;
   }
 }
-function password(event) {
+
+function password() {
   let password = document.forms["signUp"]["Password"].value;
   let error3 = document.getElementsByClassName("error")[2];
   let input = document.getElementsByTagName("input");
   let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; //بيقبل حروف وارقام 
   if (password.trim() == "") {
-    error3.innerText = "✖ Password is required";
+    error3.innerText = "× Password is required";
     error3.style.color = "rgb(182, 28, 28)";
     input[2].classList.add("E");
     return false;
   }
   else if (!passwordRegex.test(password)) {
-    error3.innerText = "✖ Password must be 8+ chars with letters and numbers.";
+    error3.innerText = "× Password must be 8+ chars with letters and numbers.";
     error3.style.color = "rgb(182, 28, 28)";
     input[2].classList.add("E");
     return false;
@@ -94,7 +106,8 @@ function password(event) {
     return true;
   }
 }
-function cpassword(event) {
+
+function cpassword() {
   let password = document.forms["signUp"]["Password"].value;
   let confirm_password = document.forms["signUp"]["confirmPassword"].value;
   let error4 = document.getElementsByClassName("error")[3];
@@ -124,7 +137,7 @@ function dataForm(event) {
   let email = document.forms["signUp"]["Email"].value;
   let pass = document.forms["signUp"]["Password"].value;
 
-  if (Name() && Email() && password() && cpassword()) {
+  if (NameCheck() && EmailCheck() && password() && cpassword()) {
     input[0].classList.add("T");
     input[1].classList.add("T");
     input[2].classList.add("T");
@@ -142,6 +155,7 @@ function dataForm(event) {
   }
 
 }
+
 function clearM(index) {
   let errorM = document.getElementsByClassName("error");
   let input = document.getElementsByTagName("input");
@@ -164,7 +178,7 @@ function upMod() {
     }
   });
 
-  const groups = ["div label", "div input", ".sign-up p", "div option", , ".Q a" ,".pass i"];
+  const groups = ["div label", "div input", ".sign-up p", "div option", , ".Q a", ".pass i"];
   groups.forEach(selector => {
     document.querySelectorAll(selector).forEach(el => {
       el.classList.toggle("light");
