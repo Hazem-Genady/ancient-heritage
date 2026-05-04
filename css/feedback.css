@@ -19,7 +19,9 @@
     --container-color-light: #fdedbf;
     --container-second-light: #383010;
 }
-
+body{
+    cursor: default;
+}
 .a {
     position: relative;
     display: flex;

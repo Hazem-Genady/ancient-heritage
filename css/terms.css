@@ -18,6 +18,9 @@
     --text-light: #6B4F3A;
     --big-text-light: #3E2F23;
 }
+body{
+    cursor: default;
+}
 
 .background {
     display: flex;
