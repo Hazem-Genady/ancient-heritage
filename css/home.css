@@ -15,10 +15,10 @@
     --container-color-card: #fcecdb;
     --container-color-light: #F9F3E5;
     --container-second-light: #383010;
-
     --text-light: #6B4F3A;
     --big-text-light: #3E2F23;
 }
+
 body{
     cursor: default;
 }
@@ -311,16 +311,6 @@ b:hover{
 
 .card.light:hover {
     box-shadow: var(--big-text-light) 1px 2px 8px 0px;
-}
-
-.icon {
-    text-align: center;
-    font-size: 40px;
-    color: var(--golden-color);
-}
-
-.icon.light {
-    color: var(--big-text-light);
 }
 
 .titleFeatures {

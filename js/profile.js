@@ -2,7 +2,7 @@ let storeData = localStorage.getItem("user")
 let userData = JSON.parse(storeData);
 
 if (userData.Name) {
-    document.getElementById("userName").innerText =  userData.Name;
+    document.getElementById("userName").innerText = userData.Name;
     document.getElementById("userEmail").innerText = userData.Email;
 }
 //taking the user information form the local storage to appeare in profile
@@ -20,7 +20,7 @@ let Data = localStorage.getItem("favorite");
 let artifactData = JSON.parse(Data);
 
 
-if (localStorage.getItem("favorite") === null) {
+if (localStorage.getItem("favorite") === "[]") {
     document.getElementById("art").innerText = "add something you like!";
 }//changing the text in case the favourites are empty
 
@@ -160,8 +160,6 @@ function pop() {//function to appeare a message for the user to sign out
         window.location.href = "../index.html";
         localStorage.removeItem("log");
     };
-
-}
 }
 
 if (main.classList.contains("light")) {

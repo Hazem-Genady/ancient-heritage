@@ -111,6 +111,7 @@ h1.light {
     padding: 50px 50px;
     width: 40%;
     height: auto;
+    border-radius: 20px;
 }
 
 .left.light {

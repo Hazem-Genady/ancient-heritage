@@ -31,6 +31,10 @@ body {
     cursor: default;
 }
 
+.nav-links {
+    transform: translateX(49px);
+}
+
 .head, main {
     display: flex;
     flex-direction: column;
@@ -79,7 +83,7 @@ hr {
 }
 
 .btn {
-    width: 100px;
+    width: 45px;
     height: 30px;
     color: var(--golden-color);
     text-align: center;
@@ -106,7 +110,6 @@ a {
 
 .fav {
     justify-self: center;
-
     img {
         height: 100%;
         width: 100%;
@@ -148,8 +151,11 @@ a {
     }
 
     .picture {
+        display: flex;
         height: 130px;
-        width: 130px;
+        width: 170px;
+        align-items: center;
+        justify-content: center;
     }
 
     .nameInfo {

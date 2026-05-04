@@ -1,6 +1,9 @@
-//list هنحط يخواتي كل الصور ومعلوماتها في 
-//The List contains dictionaries (objects) => (key : value)
-//كل صورة ليها معلومات مختلفة متخزنة هنا
+function removeFromLocal(key, id) {
+    let savedItems = JSON.parse(localStorage.getItem(key)) || [];
+    let updatedItems = savedItems.filter(el => el.id !== id);
+    localStorage.setItem(key, JSON.stringify(updatedItems));
+}
+
 let products = {
     data: [
         {
@@ -457,42 +460,55 @@ for (let i of products.data) {//لوب عادية
     let archiveIcon = document.createElement("i")
     archiveIcon.classList.add("fa-solid", "fa-box-archive", "archive-icon")//icon from FontAwsome.com
     if (isItemInStorage("archive", i.id)) {//لو الاي دي جوا الليست في اللوكال هتحليها لونها احمر
-        archiveIcon.classList.add("active-icon")
+        archiveIcon.classList.add("active-icon");
     }
     archiveIcon.onclick = () => {
-        addToLocal("archive", i)//الفانكشن الي هتضيف الكارت كله في اللوكال
-        archiveIcon.classList.add("active-icon")
+        // addToLocal("archive", i)//الفانكشن الي هتضيف الكارت كله في اللوكال
+        // archiveIcon.classList.add("active-icon");
+        if (archiveIcon.classList.contains("active-icon")) {
+            removeFromLocal("archive", i.id);
+            archiveIcon.classList.remove("active-icon");
+
+        } else {
+            addToLocal("archive", i);
+            archiveIcon.classList.add("active-icon");
+        }
     }
-    iconBox.appendChild(archiveIcon)
+    iconBox.appendChild(archiveIcon);
 
     let HeartIcon = document.createElement("i")
-    HeartIcon.classList.add("fa-solid", "fa-heart", "heart-icon")
+    HeartIcon.classList.add("fa-solid", "fa-heart", "heart-icon");
     if (isItemInStorage("favorite", i.id)) {
-        HeartIcon.classList.add("active-icon")
+        HeartIcon.classList.add("active-icon");
     }
     HeartIcon.onclick = () => {
-        addToLocal("favorite", i)
-        HeartIcon.classList.add("active-icon")
+        if (HeartIcon.classList.contains("active-icon")) {
+            removeFromLocal("favorite", i.id);
+            HeartIcon.classList.remove("active-icon");
+
+        } else {
+            addToLocal("favorite", i);
+            HeartIcon.classList.add("active-icon");
+        }
     }
-    iconBox.appendChild(HeartIcon)
+    iconBox.appendChild(HeartIcon);
+    cardFooter.appendChild(iconBox);
+    textContainer.appendChild(cardFooter);
+    card.appendChild(textContainer);
 
-    cardFooter.appendChild(iconBox)
-    textContainer.appendChild(cardFooter)
-    card.appendChild(textContainer)
 
-
-    document.getElementById("artifacts-container").appendChild(card)
+    document.getElementById("artifacts-container").appendChild(card);
 }
 
 //filter function
 function filterArtifacts(value) {//onclick in html file
-    let buttons = document.querySelectorAll(".button-value") //ليست فيها كل البوتونز
+    let buttons = document.querySelectorAll(".button-value"); //ليست فيها كل البوتونز
     buttons.forEach(button => {//changing color of choosing category
         if (value.toUpperCase() == button.innerText.toUpperCase()) {
-            button.classList.add("active-category")
+            button.classList.add("active-category");
         }
         else {
-            button.classList.remove("active-category")
+            button.classList.remove("active-category");
         }
     })
 
