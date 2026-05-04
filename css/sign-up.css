@@ -122,6 +122,7 @@ h1.light {
     flex-direction: column;
     /* gap: 15px; */
     width: 100%;
+    border-radius: 20px;
 }
 
 .form-link {
@@ -187,7 +188,7 @@ div input,
 div select {
     font-size: 16px;
     font-family: mainFont;
-    color: var(--text-color);
+    color: var(--small-text-dark);
     padding: 5px 10px;
     background-color: rgba(46, 45, 45, 0.4);
     outline: none;
@@ -204,7 +205,7 @@ div select.light {
 
 div option {
     background-color: var(--navBar-color-dark);
-    color: var(--text-light);
+    color: var(--text-dark);
 }
 
 div option.light {
