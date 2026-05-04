@@ -56,4 +56,4 @@ let savedMod = localStorage.getItem("theme");
 if (savedhome !== savedMod) {
     homeMod();
 }//adding class light to every thing to change the color in light mode and save light mode 
-=======
+ 
