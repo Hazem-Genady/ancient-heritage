@@ -51,9 +51,9 @@ function dataForm(event) {
       input[1].classList.add("T");
       text[0].classList.add("T");
       setTimeout(() => {
-         window.location.href = "https://hazem-genady.github.io/ancient-heritage/pages/index.html";
+         window.location.href = "https://hazem-genady.github.io/ancient-heritage/pages/feedback.html";
       }, 3000);
-   }
+   }  
 }
 
 function clearM(index) {
